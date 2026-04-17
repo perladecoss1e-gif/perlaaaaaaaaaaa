@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cultura Digital – Cultura Digital 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red:#7c3aed; --red-dark:#5b21b6; --red-light:#a78bfa;
+      --bg:#1a1520; --card-bg:#261d35; --accent:#c084fc;
+      --white:#f0f0f0; --gray:#888;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;display:flex;flex-direction:column;}
+    header{background:linear-gradient(160deg,var(--red-dark) 0%,var(--red) 60%,var(--red-light) 100%);position:relative;overflow:hidden;padding:40px 40px 35px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    header::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px);pointer-events:none;}
+    .back-btn{position:absolute;top:20px;left:24px;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.3);border-radius:4px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s;z-index:10;}
+    .back-btn:hover{background:rgba(0,0,0,.5);}
+    .task-number{font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+    .task-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);line-height:1;letter-spacing:0.04em;color:#fff;text-shadow:4px 4px 0 rgba(0,0,0,.35);text-align:center;}
+    .task-desc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.8);max-width:600px;text-align:center;line-height:1.5;margin-top:6px;}
+    main{flex:1;padding:50px 32px;max-width:900px;margin:0 auto;width:100%;}
+    .content-block{background:var(--card-bg);border-radius:10px;padding:32px 36px;box-shadow:0 6px 24px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05);margin-bottom:28px;}
+    .section-label{font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .section-heading{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em;color:var(--white);margin-bottom:16px;}
+    .content-text{font-size:0.95rem;font-weight:500;line-height:1.7;color:rgba(240,238,235,.75);}
+    .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .tag{font-family:'Share Tech Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;padding:5px 14px;border:1px solid var(--red-light);border-radius:40px;color:var(--red-light);}
+    .def-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:16px;}
+    .def-card{background:rgba(0,0,0,.25);border-radius:8px;padding:18px;border-left:3px solid var(--accent);}
+    .def-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.06em;color:var(--accent);margin-bottom:8px;}
+    .def-card p{font-size:0.88rem;line-height:1.6;color:rgba(240,238,235,.7);}
+    footer{background:#111315;border-top:2px solid var(--red-dark);padding:28px 32px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;}
+    .footer-school{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.08em;color:var(--white);}
+    .footer-detail{font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;color:var(--gray);}
+    .footer-detail span{color:var(--accent);}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back-btn" onclick="window.history.back()">← Volver</a>
+    <span class="task-number">ACTIVIDAD / 01</span>
+    <h1 class="task-title">Cultura Digital</h1>
+    <p class="task-desc">Exploración de cómo la tecnología transforma la sociedad, la comunicación y el pensamiento humano en la era digital.</p>
+  </header>
+
+  <main>
+    <div class="content-block">
+      <p class="section-label">Definición</p>
+      <h2 class="section-heading">¿Qué es la Cultura Digital?</h2>
+      <p class="content-text">
+        La cultura digital es el conjunto de prácticas, valores, conocimientos y formas de interacción que emergen en la sociedad a partir del uso generalizado de las tecnologías digitales. Abarca desde la manera en que nos comunicamos hasta cómo aprendemos, trabajamos y nos entretenemos en un mundo cada vez más conectado.
+      </p>
+      <p class="content-text" style="margin-top:12px;">
+        No se trata solo del uso de dispositivos tecnológicos, sino de la transformación profunda de las relaciones humanas, la producción de conocimiento y la participación ciudadana en entornos digitales.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Dimensiones principales</p>
+      <h2 class="section-heading">Pilares de la Cultura Digital</h2>
+      <div class="def-grid">
+        <div class="def-card">
+          <h3>Conectividad</h3>
+          <p>El acceso a internet y redes digitales como base para participar en la sociedad contemporánea.</p>
+        </div>
+        <div class="def-card">
+          <h3>Participación</h3>
+          <p>La capacidad de crear, compartir y colaborar activamente en comunidades virtuales y plataformas digitales.</p>
+        </div>
+        <div class="def-card">
+          <h3>Identidad Digital</h3>
+          <p>La representación de personas y comunidades en entornos en línea y cómo esto moldea la autopercepción.</p>
+        </div>
+        <div class="def-card">
+          <h3>Literacidad Digital</h3>
+          <p>Las habilidades necesarias para comprender, evaluar y producir información en medios digitales.</p>
+        </div>
+        <div class="def-card">
+          <h3>Ética Digital</h3>
+          <p>Los valores y normas que guían el comportamiento responsable en espacios digitales y redes sociales.</p>
+        </div>
+        <div class="def-card">
+          <h3>Innovación</h3>
+          <p>La cultura de la creación tecnológica, el emprendimiento digital y la resolución de problemas con tecnología.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Impacto</p>
+      <h2 class="section-heading">Transformación Social</h2>
+      <p class="content-text">
+        La cultura digital ha redefinido industrias enteras, desde la educación hasta el entretenimiento. Ha democratizado el acceso a la información, pero también ha generado nuevos desafíos como la desinformación, la brecha digital y las preocupaciones sobre privacidad.
+      </p>
+      <p class="content-text" style="margin-top:12px;">
+        En México y América Latina, la adopción digital ha crecido aceleradamente en la última década, creando nuevas oportunidades para jóvenes que dominan estas tecnologías y pueden utilizarlas para resolver problemas locales.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Redes Sociales</span>
+        <span class="tag">Inteligencia Artificial</span>
+        <span class="tag">Ciudadanía Digital</span>
+        <span class="tag">Economía Digital</span>
+        <span class="tag">Privacidad</span>
+        <span class="tag">Brecha Digital</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-school">Centro de Bachillerato Tecnológico Industrial y de Servicios 144</p>
+    <p class="footer-detail">Especialidad: <span>Inteligencia Artificial</span></p>
+    <p class="footer-detail">Profesor: <span>Chirino Balcázar Jordy</span></p>
+  </footer>
+</body>
+</html>

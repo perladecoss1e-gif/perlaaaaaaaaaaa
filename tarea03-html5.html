@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía HTML5 – Cultura Digital 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--red:#7c3aed;--red-dark:#5b21b6;--red-light:#a78bfa;--bg:#1a1520;--card-bg:#261d35;--accent:#c084fc;--white:#f0f0f0;--gray:#888;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;display:flex;flex-direction:column;}
+    header{background:linear-gradient(160deg,var(--red-dark) 0%,var(--red) 60%,var(--red-light) 100%);position:relative;overflow:hidden;padding:40px 40px 35px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    header::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px);pointer-events:none;}
+    .back-btn{position:absolute;top:20px;left:24px;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.3);border-radius:4px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s;z-index:10;}
+    .back-btn:hover{background:rgba(0,0,0,.5);}
+    .task-number{font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+    .task-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);line-height:1;letter-spacing:0.04em;color:#fff;text-shadow:4px 4px 0 rgba(0,0,0,.35);text-align:center;}
+    .task-desc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.8);max-width:600px;text-align:center;line-height:1.5;margin-top:6px;}
+    main{flex:1;padding:50px 32px;max-width:900px;margin:0 auto;width:100%;}
+    .content-block{background:var(--card-bg);border-radius:10px;padding:32px 36px;box-shadow:0 6px 24px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05);margin-bottom:28px;}
+    .section-label{font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .section-heading{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em;color:var(--white);margin-bottom:16px;}
+    .content-text{font-size:0.95rem;font-weight:500;line-height:1.7;color:rgba(240,238,235,.75);}
+    .tag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:16px;}
+    .tag-card{background:rgba(0,0,0,.3);border-radius:8px;padding:14px 16px;}
+    .tag-card code{display:block;font-family:'Share Tech Mono',monospace;font-size:0.85rem;color:#c084fc;margin-bottom:6px;}
+    .tag-card p{font-size:0.82rem;color:rgba(240,238,235,.65);line-height:1.5;}
+    pre{background:rgba(0,0,0,.4);border-radius:8px;padding:20px;overflow-x:auto;margin-top:14px;border-left:3px solid var(--red);}
+    pre code{font-family:'Share Tech Mono',monospace;font-size:0.8rem;line-height:1.7;color:#e0d7f7;}
+    .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .tag{font-family:'Share Tech Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;padding:5px 14px;border:1px solid var(--red-light);border-radius:40px;color:var(--red-light);}
+    footer{background:#111315;border-top:2px solid var(--red-dark);padding:28px 32px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;}
+    .footer-school{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.08em;color:var(--white);}
+    .footer-detail{font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;color:var(--gray);}
+    .footer-detail span{color:var(--accent);}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back-btn" onclick="window.history.back()">← Volver</a>
+    <span class="task-number">ACTIVIDAD / 03</span>
+    <h1 class="task-title">Guía Rápida de HTML5</h1>
+    <p class="task-desc">Referencia esencial de etiquetas, atributos y estructura base del lenguaje de marcado estándar de la web.</p>
+  </header>
+
+  <main>
+    <div class="content-block">
+      <p class="section-label">Estructura base</p>
+      <h2 class="section-heading">Documento HTML5</h2>
+      <p class="content-text">Todo documento HTML5 parte de una estructura mínima que el navegador interpreta para mostrar contenido correctamente.</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+    &lt;title&gt;Mi página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Contenido aquí --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Etiquetas semánticas</p>
+      <h2 class="section-heading">HTML5 Semántico</h2>
+      <p class="content-text">HTML5 introdujo etiquetas semánticas que describen el propósito del contenido, mejorando accesibilidad y SEO.</p>
+      <div class="tag-grid">
+        <div class="tag-card"><code>&lt;header&gt;</code><p>Encabezado de la página o sección.</p></div>
+        <div class="tag-card"><code>&lt;nav&gt;</code><p>Bloque de navegación con enlaces.</p></div>
+        <div class="tag-card"><code>&lt;main&gt;</code><p>Contenido principal único de la página.</p></div>
+        <div class="tag-card"><code>&lt;section&gt;</code><p>Sección temática del documento.</p></div>
+        <div class="tag-card"><code>&lt;article&gt;</code><p>Contenido independiente y reutilizable.</p></div>
+        <div class="tag-card"><code>&lt;aside&gt;</code><p>Contenido relacionado pero secundario.</p></div>
+        <div class="tag-card"><code>&lt;footer&gt;</code><p>Pie de página o sección.</p></div>
+        <div class="tag-card"><code>&lt;figure&gt;</code><p>Imagen o diagrama con leyenda.</p></div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Etiquetas de texto y multimedia</p>
+      <h2 class="section-heading">Elementos Frecuentes</h2>
+      <div class="tag-grid">
+        <div class="tag-card"><code>&lt;h1&gt; – &lt;h6&gt;</code><p>Encabezados de distintos niveles jerárquicos.</p></div>
+        <div class="tag-card"><code>&lt;p&gt;</code><p>Párrafo de texto.</p></div>
+        <div class="tag-card"><code>&lt;a href=""&gt;</code><p>Enlace o hipervínculo a otra URL.</p></div>
+        <div class="tag-card"><code>&lt;img src="" alt=""&gt;</code><p>Imagen con texto alternativo.</p></div>
+        <div class="tag-card"><code>&lt;ul&gt; / &lt;ol&gt;</code><p>Lista desordenada u ordenada.</p></div>
+        <div class="tag-card"><code>&lt;table&gt;</code><p>Tabla de datos con filas y columnas.</p></div>
+        <div class="tag-card"><code>&lt;form&gt;</code><p>Formulario para recolección de datos.</p></div>
+        <div class="tag-card"><code>&lt;video&gt; / &lt;audio&gt;</code><p>Elementos multimedia nativos HTML5.</p></div>
+      </div>
+      <div class="tag-row" style="margin-top:20px;">
+        <span class="tag">Semántica</span>
+        <span class="tag">Accesibilidad</span>
+        <span class="tag">SEO</span>
+        <span class="tag">DOM</span>
+        <span class="tag">Atributos</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-school">Centro de Bachillerato Tecnológico Industrial y de Servicios 144</p>
+    <p class="footer-detail">Especialidad: <span>Inteligencia Artificial</span></p>
+    <p class="footer-detail">Profesor: <span>Chirino Balcázar Jordy</span></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lenguajes – Cultura Digital 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--red:#7c3aed;--red-dark:#5b21b6;--red-light:#a78bfa;--bg:#1a1520;--card-bg:#261d35;--accent:#c084fc;--white:#f0f0f0;--gray:#888;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;display:flex;flex-direction:column;}
+    header{background:linear-gradient(160deg,var(--red-dark) 0%,var(--red) 60%,var(--red-light) 100%);position:relative;overflow:hidden;padding:40px 40px 35px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    header::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px);pointer-events:none;}
+    .back-btn{position:absolute;top:20px;left:24px;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.3);border-radius:4px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s;z-index:10;}
+    .back-btn:hover{background:rgba(0,0,0,.5);}
+    .task-number{font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+    .task-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);line-height:1;letter-spacing:0.04em;color:#fff;text-shadow:4px 4px 0 rgba(0,0,0,.35);text-align:center;}
+    .task-desc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.8);max-width:600px;text-align:center;line-height:1.5;margin-top:6px;}
+    main{flex:1;padding:50px 32px;max-width:900px;margin:0 auto;width:100%;}
+    .content-block{background:var(--card-bg);border-radius:10px;padding:32px 36px;box-shadow:0 6px 24px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05);margin-bottom:28px;}
+    .section-label{font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .section-heading{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em;color:var(--white);margin-bottom:16px;}
+    .content-text{font-size:0.95rem;font-weight:500;line-height:1.7;color:rgba(240,238,235,.75);}
+    .lang-table{width:100%;border-collapse:collapse;margin-top:16px;}
+    .lang-table th{font-family:'Share Tech Mono',monospace;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);padding:10px 14px;border-bottom:2px solid var(--red-dark);text-align:left;}
+    .lang-table td{font-size:0.88rem;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(240,238,235,.8);}
+    .lang-table tr:hover td{background:rgba(124,58,237,.1);}
+    .badge{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;padding:3px 10px;border-radius:40px;font-weight:600;}
+    .badge-design{background:rgba(192,132,252,.2);color:#c084fc;border:1px solid rgba(192,132,252,.4);}
+    .badge-markup{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.3);}
+    .badge-prog{background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3);}
+    .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .tag{font-family:'Share Tech Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;padding:5px 14px;border:1px solid var(--red-light);border-radius:40px;color:var(--red-light);}
+    footer{background:#111315;border-top:2px solid var(--red-dark);padding:28px 32px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;}
+    .footer-school{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.08em;color:var(--white);}
+    .footer-detail{font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;color:var(--gray);}
+    .footer-detail span{color:var(--accent);}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back-btn" onclick="window.history.back()">← Volver</a>
+    <span class="task-number">ACTIVIDAD / 02</span>
+    <h1 class="task-title">Lenguajes de Diseño y Programación</h1>
+    <p class="task-desc">Existen diferentes lenguajes, cada uno con un enfoque específico: diseño, maquetación y programación.</p>
+  </header>
+
+  <main>
+    <div class="content-block">
+      <p class="section-label">Introducción</p>
+      <h2 class="section-heading">¿Qué es un Lenguaje Digital?</h2>
+      <p class="content-text">
+        Un lenguaje de programación o diseño es un sistema formal de comunicación con las computadoras. Así como los idiomas humanos tienen gramática y vocabulario, los lenguajes digitales tienen una sintaxis y semántica que permiten dar instrucciones precisas a las máquinas.
+      </p>
+      <p class="content-text" style="margin-top:12px;">
+        En el desarrollo web, los lenguajes trabajan juntos: HTML estructura el contenido, CSS lo estiliza y JavaScript lo hace interactivo. Cada uno tiene un rol definido y complementario.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Clasificación</p>
+      <h2 class="section-heading">Tipos de Lenguajes</h2>
+      <table class="lang-table">
+        <thead>
+          <tr>
+            <th>Lenguaje</th>
+            <th>Tipo</th>
+            <th>Propósito principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>HTML5</strong></td>
+            <td><span class="badge badge-markup">Marcado</span></td>
+            <td>Estructura y semántica del contenido web</td>
+          </tr>
+          <tr>
+            <td><strong>CSS3</strong></td>
+            <td><span class="badge badge-design">Diseño</span></td>
+            <td>Presentación visual, colores, tipografía y layout</td>
+          </tr>
+          <tr>
+            <td><strong>JavaScript</strong></td>
+            <td><span class="badge badge-prog">Programación</span></td>
+            <td>Interactividad, lógica y comportamiento dinámico</td>
+          </tr>
+          <tr>
+            <td><strong>Python</strong></td>
+            <td><span class="badge badge-prog">Programación</span></td>
+            <td>Scripts, IA, análisis de datos y backend</td>
+          </tr>
+          <tr>
+            <td><strong>SQL</strong></td>
+            <td><span class="badge badge-prog">Programación</span></td>
+            <td>Consultas y gestión de bases de datos relacionales</td>
+          </tr>
+          <tr>
+            <td><strong>Markdown</strong></td>
+            <td><span class="badge badge-markup">Marcado</span></td>
+            <td>Documentación y formato de texto ligero</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Conclusión</p>
+      <h2 class="section-heading">Diferencias Clave</h2>
+      <p class="content-text">
+        Los lenguajes de <strong style="color:var(--accent)">marcado</strong> como HTML describen la estructura y el significado del contenido, sin lógica computacional. Los lenguajes de <strong style="color:var(--accent)">diseño</strong> como CSS controlan cómo se ve ese contenido. Los lenguajes de <strong style="color:var(--accent)">programación</strong> como JavaScript o Python permiten ejecutar instrucciones, tomar decisiones y manipular datos dinámicamente.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Frontend</span>
+        <span class="tag">Backend</span>
+        <span class="tag">Full-Stack</span>
+        <span class="tag">Web Dev</span>
+        <span class="tag">Sintaxis</span>
+        <span class="tag">Semántica</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-school">Centro de Bachillerato Tecnológico Industrial y de Servicios 144</p>
+    <p class="footer-detail">Especialidad: <span>Inteligencia Artificial</span></p>
+    <p class="footer-detail">Profesor: <span>Chirino Balcázar Jordy</span></p>
+  </footer>
+</body>
+</html>

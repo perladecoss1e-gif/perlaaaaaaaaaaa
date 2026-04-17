@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía CSS3 – Cultura Digital 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--red:#7c3aed;--red-dark:#5b21b6;--red-light:#a78bfa;--bg:#1a1520;--card-bg:#261d35;--accent:#c084fc;--white:#f0f0f0;--gray:#888;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;display:flex;flex-direction:column;}
+    header{background:linear-gradient(160deg,var(--red-dark) 0%,var(--red) 60%,var(--red-light) 100%);position:relative;overflow:hidden;padding:40px 40px 35px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    header::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0px,rgba(0,0,0,.07) 1px,transparent 1px,transparent 18px);pointer-events:none;}
+    .back-btn{position:absolute;top:20px;left:24px;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.3);border-radius:4px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s;z-index:10;}
+    .back-btn:hover{background:rgba(0,0,0,.5);}
+    .task-number{font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+    .task-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);line-height:1;letter-spacing:0.04em;color:#fff;text-shadow:4px 4px 0 rgba(0,0,0,.35);text-align:center;}
+    .task-desc{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.8);max-width:600px;text-align:center;line-height:1.5;margin-top:6px;}
+    main{flex:1;padding:50px 32px;max-width:900px;margin:0 auto;width:100%;}
+    .content-block{background:var(--card-bg);border-radius:10px;padding:32px 36px;box-shadow:0 6px 24px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05);margin-bottom:28px;}
+    .section-label{font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .section-heading{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em;color:var(--white);margin-bottom:16px;}
+    .content-text{font-size:0.95rem;font-weight:500;line-height:1.7;color:rgba(240,238,235,.75);}
+    pre{background:rgba(0,0,0,.4);border-radius:8px;padding:20px;overflow-x:auto;margin-top:14px;border-left:3px solid var(--red);}
+    pre code{font-family:'Share Tech Mono',monospace;font-size:0.8rem;line-height:1.7;color:#e0d7f7;}
+    .prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:16px;}
+    .prop-card{background:rgba(0,0,0,.3);border-radius:8px;padding:14px 16px;}
+    .prop-card code{display:block;font-family:'Share Tech Mono',monospace;font-size:0.82rem;color:#c084fc;margin-bottom:5px;}
+    .prop-card p{font-size:0.82rem;color:rgba(240,238,235,.65);line-height:1.5;}
+    .box-model{display:flex;flex-direction:column;align-items:center;padding:20px;gap:0;margin-top:16px;}
+    .bm-layer{padding:16px 32px;border-radius:6px;text-align:center;font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;width:100%;max-width:480px;}
+    .bm-margin{background:rgba(124,58,237,.15);border:2px dashed var(--red-light);color:var(--red-light);}
+    .bm-border{background:rgba(192,132,252,.15);border:2px solid var(--accent);color:var(--accent);margin:8px 0;}
+    .bm-padding{background:rgba(52,211,153,.1);border:2px dashed #34d399;color:#34d399;}
+    .bm-content{background:rgba(251,191,36,.1);border:2px solid #fbbf24;color:#fbbf24;margin:8px 0;}
+    .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .tag{font-family:'Share Tech Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;padding:5px 14px;border:1px solid var(--red-light);border-radius:40px;color:var(--red-light);}
+    footer{background:#111315;border-top:2px solid var(--red-dark);padding:28px 32px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;}
+    .footer-school{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.08em;color:var(--white);}
+    .footer-detail{font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.15em;color:var(--gray);}
+    .footer-detail span{color:var(--accent);}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back-btn" onclick="window.history.back()">← Volver</a>
+    <span class="task-number">ACTIVIDAD / 04</span>
+    <h1 class="task-title">Guía Rápida de CSS3</h1>
+    <p class="task-desc">Guía de propiedades, selectores, box model y layouts para dar estilo y vida visual a cualquier página web.</p>
+  </header>
+
+  <main>
+    <div class="content-block">
+      <p class="section-label">Sintaxis</p>
+      <h2 class="section-heading">Estructura de una Regla CSS</h2>
+      <p class="content-text">Una regla CSS se compone de un selector que apunta a un elemento HTML y un bloque de declaraciones con propiedades y sus valores.</p>
+      <pre><code>/* Selector + bloque de declaraciones */
+selector {
+  propiedad: valor;
+  otra-propiedad: valor;
+}
+
+/* Ejemplos */
+h1 {
+  color: #7c3aed;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.5);
+}</code></pre>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Box Model</p>
+      <h2 class="section-heading">El Modelo de Caja</h2>
+      <p class="content-text">Cada elemento HTML es tratado como una caja rectangular compuesta por 4 capas concéntricas. Comprender este modelo es fundamental para controlar el espacio y los márgenes.</p>
+      <div class="box-model">
+        <div class="bm-layer bm-margin">MARGIN — espacio exterior</div>
+        <div class="bm-layer bm-border">BORDER — borde visible</div>
+        <div class="bm-layer bm-padding">PADDING — relleno interior</div>
+        <div class="bm-layer bm-content">CONTENT — contenido real</div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <p class="section-label">Propiedades Clave</p>
+      <h2 class="section-heading">Propiedades Esenciales</h2>
+      <div class="prop-grid">
+        <div class="prop-card"><code>color</code><p>Color del texto del elemento.</p></div>
+        <div class="prop-card"><code>background</code><p>Fondo del elemento: color, gradiente o imagen.</p></div>
+        <div class="prop-card"><code>font-size</code><p>Tamaño de la tipografía en px, rem o em.</p></div>
+        <div class="prop-card"><code>display</code><p>Tipo de renderizado: block, flex, grid, none…</p></div>
+        <div class="prop-card"><code>position</code><p>Posicionamiento: static, relative, absolute, fixed.</p></div>
+        <div class="prop-card"><code>flex / grid</code><p>Sistemas de layout modernos y responsivos.</p></div>
+        <div class="prop-card"><code>transition</code><p>Animaciones suaves al cambiar propiedades.</p></div>
+        <div class="prop-card"><code>border-radius</code><p>Redondea las esquinas del elemento.</p></div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Selectores</span>
+        <span class="tag">Flexbox</span>
+        <span class="tag">Grid</span>
+        <span class="tag">Responsive</span>
+        <span class="tag">Variables CSS</span>
+        <span class="tag">Animaciones</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-school">Centro de Bachillerato Tecnológico Industrial y de Servicios 144</p>
+    <p class="footer-detail">Especialidad: <span>Inteligencia Artificial</span></p>
+    <p class="footer-detail">Profesor: <span>Chirino Balcázar Jordy</span></p>
+  </footer>
+</body>
+</html>
